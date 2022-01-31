@@ -1,10 +1,15 @@
+<!--
+Important Credits:
+Images are from flaticon.com
+Contact form JS is from SMTP js
+-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="shortcut icon" href="https://cdn-icons.flaticon.com/png/512/2436/premium/2436729.png?token=exp=1642610687~hmac=50b034e4a833511c4d80e5d5934a3afd" type="image/x-icon">
+  <link rel="shortcut icon" href="https://cdn-icons.flaticon.com/png/512/3145/premium/3145805.png?token=exp=1643258481~hmac=d8a0f64d3ff145d18164f268bba5d884" type="image/x-icon">
   <title>JustBooks</title>
 </head>
 <body>
@@ -18,17 +23,18 @@
             text-decoration: none;
             scroll-behavior: smooth;
         }
-        
+        .nav {
+          position: fixed;
+        }
         nav {
           border-radius: 0px 0px 20px 20px;
           height: 10vh;
-          outline: 4px solid rgb(255, 255, 255);
           display: flex;
           align-items: center;
           background: linear-gradient(to right, rgb(250, 62, 103), rgb(187, 73, 94));
           justify-content: space-between;
-          position: fixed;
           width: 100%;
+          border: 2px solid #f5f5f5
         }
 
         .logo {
@@ -128,6 +134,7 @@
           color: rgb(87, 87, 87);
           font-weight: 800;
           margin-bottom: 20px;
+          text-align: center;
         }
 
         form input, textarea {
@@ -149,42 +156,198 @@
           align-items: center;
           border: 0;
           outline: none;
-          width: 50%;
+          width: 100%;
           margin: 20px auto 0;
           border-radius: 30px;
           cursor: pointer;
         }
-       form button img {
-         width: 20%;
-       }
         #message {
           resize: none;
         }
+        footer {
+          height: 10vh;
+          display: flex;
+          justify-content: space-around;
+          align-items: center;
+          background: #E5E5E5;
+        }
+        footer h2 span {
+          font-weight: 400;
+          font-size: 18px;
 
+        }
+
+        @media screen and (max-width: 500px) {
+          .container {
+            display: flex;
+            flex-direction: column;
+          }
+
+          .text-content {
+            width: 100%;
+            margin: 0 25px;
+            text-align: center;
+          }
+
+          .left {
+            text-align: center;
+          }
+
+          #JustBooks {
+            height: 320vh;
+          }
+          #home {
+            height: 150vh;
+          }
+
+          .image-container {
+            width: 100%;
+            margin: 60px 0;
+          }
+          .image-container img {
+            width: 100vw;
+          }
+        }
+
+        @media screen and (max-width: 1200px) {
+          .container {
+            display: flex;
+            margin: 0 25px;
+            flex-direction: column;
+          }
+
+          .text-content {
+            width: 100%;
+            margin: 0 25px;
+            text-align: center;
+          }
+
+          .left {
+            text-align: center;
+          }
+
+          #JustBooks {
+            height: 300vh;
+          }
+          #home {
+            height: 200vh;
+          }
+
+          .image-container {
+            width: 100%;
+          }
+          .image-container img {
+            width: 20%;
+          }
+
+          #why-books {
+            height: 170vh;
+          }
+
+          .nav-links {
+            width: 80%;
+          }
+
+          footer {
+            height: 10vh;
+            flex-direction: column;
+          }
+
+          .logo {
+            width: 100%;
+          }
+
+          .logo img {
+            width: 10%;
+          }
+        }
+
+        footer span a{
+          color: #000;
+        }
+        nav {
+    position: relative;
+  }
+  @media screen and (max-width: 768px) {x
+  .hamburger {
+    position: absolute;
+    cursor: pointer;
+    right: 5%;
+    top: 50%;
+    transform: translate(-5%, -50%);
+    z-index: 2;
+  }
+
+  .nav-links {
+    position: fixed;
+    background: #5b78c7;
+    height: 100vh;
+    width: 100%;
+    flex-direction: column;
+    clip-path: circle(100px at 90% -10%);
+    -webkit-clip-path: circle(100px at 90% -10%);
+    transition: all 1s ease-out;
+    pointer-events: none;
+  }
+  .nav-links.open {
+    clip-path: circle(1000px at 90% -10%);
+    -webkit-clip-path: circle(1000px at 90% -10%);
+    pointer-events: all;
+  }
+  .landing {
+    flex-direction: column;
+  }
+  .nav-links li {
+    opacity: 0;
+  }
+  .nav-links li a {
+    font-size: 25px;
+  }
+  .nav-links li:nth-child(1) {
+    transition: all 0.5s ease 0.2s;
+  }
+  .nav-links li:nth-child(2) {
+    transition: all 0.5s ease 0.4s;
+  }
+  .nav-links li:nth-child(3) {
+    transition: all 0.5s ease 0.6s;
+  }
+  li.fade {
+    opacity: 1;
+  }
+}
     </style>
-    <nav>
+    <nav class="nav">
         <div class="logo">
-          <img src="https://cdn-icons.flaticon.com/png/512/2436/premium/2436729.png?token=exp=1642610687~hmac=50b034e4a833511c4d80e5d5934a3afd" alt="">
+          <img src="https://cdn-icons.flaticon.com/png/512/3145/premium/3145805.png?token=exp=1643258481~hmac=d8a0f64d3ff145d18164f268bba5d884" alt="">
           <h2>JustBooks</h2>
         </div>
+        <div class="hamburger">
+          <div class="line"></div>
+          <div class="line"></div>
+          <div class="line"></div>
+        </div>
         <ul class="nav-links">
-            <li><a href="#">Home</a></li>
+            <li><a href="#home">Home</a></li>
             <li><a href="#JustBooks">About Us</a></li>
             <li><a href="#why-books">Why books</a></li>
             <li><a href="#contact-us">Contact Us</a></li>
         </ul>
+
     </nav>
 
-    <section>
-      
+    <section id="home">
+      <br>
+      <br>
+      <br>
       <div class="container">
-        
+
       <div class="text-content">
-        <h1><b> Books, books and more books </b></h1> <br>
+        <h1><b> Books, books and more books</b></h1> <br>
         <p>According to the Guinness World Records, the largest book in the world is 'This the Prophet Mohamed' which was made by over 50 people. The book measures 16.40 feet x 26.44 feet, weighs roughly 1500 kg and it has 429 pages. It was unveiled by Mshahed International Group in Dubai on February 27, 2012. <br> <br> The word 'Library' is derived from the Latin word 'Liber' which means “book”. Meanwhile, according to Britannica.com the 'Latinized Greek word, bibliotheca, is the origin of the word for library in German, Russian, and the Romance languages'. <br> <br> The world record of having the longest title of a book was achieved by Vityala Yethindra for his book 'The Historical Development of the Heart…' which was released on March 20, 2019, according to the Guinness World Records. The book title consists of 26,021 characters. Many of you would wonder what makes the title this long. The answer: Yethindra has enlisted various species and questions which are mentioned in the book as a part of the title!</p>
       </div>
       <div class="image-container">
-        <img src="https://cdn-icons.flaticon.com/png/512/3389/premium/3389081.png?token=exp=1642597180~hmac=ce8f18c3cf290a26a56ab918e1a7b30e" alt="">
+        <img src="https://cdn-icons-png.flaticon.com/512/3771/3771361.png" alt="">
       </div>
       </div>
     </section>
@@ -201,28 +364,28 @@
         <h2>Importance of Books</h2> <br>
         <p>
           Reading is a valuable skill for acquiring knowledge, but it has many other important benefits. While engaged readers, young and old, are often aware of the knowledge they gain by reading a text, they may not be aware of all of the other valuable skills they are advancing at the same time. The benefits of reading include enhancing one's language skills, especially if the reading material blends familiar and challenging concepts. Vocabulary, grammar, and syntax are all advanced by reading, which enhances one's ability to speak and write. <br> <br>
-          
+
           Reading is therefore a particularly valuable exercise for English language learners. The benefits of reading apply to their language journey, even if the goal is, for instance, fluency in speaking. However, it can be difficult to find reading material that is accessible, challenging, and relevant to an English language learner, making quality reading material a valuable resource.</p>
       </div>
       <div class="image-container">
-        <img src="https://cdn-icons-png.flaticon.com/512/3534/3534033.png" alt="">
+        <img src="https://cdn-icons-png.flaticon.com/512/3771/3771379.png" alt="">
       </div>
       </div>
       <div class="container">
       <div class="text-content">
         <h2>My Favorite Books</h2> <br>
-        <p>My Favourite Books are the Harry Potter series of books 
-          because they have explored the many different mysteries 
+        <p>My Favourite Books are the Harry Potter series of books
+          because they have explored the many different mysteries
           and the many different ways on how the trio solves them
-          . It has a great experience as I foun myself reading it
+          . It has a great experience as I found myself reading it
           till 9:30pm instead of my regular 9:00pm. <br> <br> It starts with Dumbledore, Professor McGonagall and Rubeus Hagrid leaving a baby boy, with a tuft of jet-black hair and a curiously shaped wound on his brow, on the doorstep of number four, Privet Drive. They might have thought that his aunt and uncle would look after him kindly. But ten years later, Harry Potter sleeps in a cupboard under the stairs, and the Dursleys - Vernon, Petunia and their son Dudley - don't exactly treat him like one of the family. Especially as it becomes clear quite how different from them he is.
-
+          <br>
           As his eleventh birthday arrives, the time comes for Harry Potter to discover the truth about his magical beginnings - and embark on the enthralling, unmissable adventure that will lead him to Hogwarts School of Witchcraft and Wizardry, his true friends Ron Weasley and Hermione Granger, powerful secrets and a destiny he cannot avoid... <br>
 
-        </p> 
+        </p>
       </div>
       <div class="image-container">
-        <img src="https://cdn-icons.flaticon.com/png/512/2436/premium/2436729.png?token=exp=1642599864~hmac=3c9ae88b1c9e406530f73eef939d1aa9" alt="">
+        <img src="https://cdn-icons-png.flaticon.com/512/2436/2436645.png" alt="">
       </div>
       </div>
     </section>
@@ -235,13 +398,16 @@
       <div class="head">
         <h1>Why books</h1>
       </div>
+      <br>
+      <br>
+      <br>
       <div class="container left">
       <div class="text-content">
         <h2>Why books over the Internet</h2> <br>
-        <p>ver the years, the Internet has improved exponentially. Internet is a wormhole that takes consumer’s time away from other tasks and provides entertainment and information. However, in no way can the Internet compare with the personal experience of reading a good book. Books provide a warm and personal experience that sitting in front of a computer screen cannot. Today we will explain why books are better than internet?
+        <p>over the years, the Internet has improved exponentially. Internet is a wormhole that takes consumer's time away from other tasks and provides entertainment and information. However, in no way can the Internet compare with the personal experience of reading a good book. Books provide a warm and personal experience that sitting in front of a computer screen cannot. Today we will explain why books are better than internet?
           <br>
           <br>
-          In today’s world for almost all people Internet is very necessary and important. While the Internet keeps its consumers ‘ minds occupied by social media, trolls, fake news and all the other hazards of online life, books on the other hand allow its readers an escape from reality to internalize, react and transform. Internet is changing every hour. It is faster and the power that the Internet has over people cannot be denied. 
+          In today's world for almost all people Internet is very necessary and important. While the Internet keeps its consumer's minds occupied by social media, trolls, fake news and all the other hazards of online life, books on the other hand allow its readers an escape from reality to internalize, react and transform. Internet is changing every hour. It is faster and the power that the Internet has over people cannot be denied.
         <br>
         <br>
           Compared to the Internet books are a slow process, but the information and experience of reading a good book stays with the readers for a long period. Books are more reliable than the conventional Internet. Books are reviewed before publishing and the readers know the source in the book is legitimate. On the Internet such is not the case. Anything can be posted on the Internet at any time by anyone. Internet has so much information that it is hard to understand whether the information is true or false. This is why books are better than internet and far more reliable.
@@ -267,8 +433,12 @@
       </form>
     </div>
     </section>
+    <footer>
+      <h2> <span>&copy;2020-2022 </span> JustBooks</h2>
+      <span>Find Us on <a href="https://twitter.com" target="__blank">Twitter</a>, <a href="https://facebook.com"target="__blank">Facebook</a>, <a href="https://instagram.com"target="__blank">Instagram</a>, </span>
+    </footer>
     <script src="https://smtpjs.com/v3/smtp.js"></script>
-    <script>                                              
+    <script>
       function sendEmail(){
         Email.send({
     Host : "smtp.gmail.com",
@@ -277,7 +447,10 @@
     To : 'aadigaming6910@gmail.com',
     From : document.getElementById("email").value,
     Subject : document.getElementById("subject").value,
-    Body : document.getElementById("message").value
+    Body : "Name: " + document.getElementById("name").value +
+    "<br> Email: " + document.getElementById("email").value +
+    "<br> Subject: " + document.getElementById("subject").value +
+    "<br> Body: " + document.getElementById("message").value
 }).then(
   message => alert("Message Sent Successfully!")
 );
@@ -286,4 +459,3 @@
     </script>
 </body>
 </html>
-
